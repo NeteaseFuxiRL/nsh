@@ -1,5 +1,7 @@
 # Justice Online ([逆水寒](https://n.163.com))
 
+![https://fuxi.163.com/en/](img/fuxi.png)
+
 This is a simulated game environment for the commercial game [Justice Online](https://n.163.com).
 This environment is designed for training a game AI
 since the resource requirement (e.g., memory usage, startup time) is much less than the original game,
@@ -116,3 +118,7 @@ Here, the `-m nsh/full_power=0` argument is used to run this game with a normal 
 You may use the keyboard (the default key mapping config file is `netease/nsh/config/relative.tsv`) to control the player 0 fight against a rule-based opponent.
 Here is an example:
 ![](img/play.gif)
+
+# Author
+
+* 申瑞珉 (Ruimin Shen)
