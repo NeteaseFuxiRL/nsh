@@ -1,0 +1,21 @@
+-- 修改flowchart视野
+g_PatchMgr:AddGasPatch([===[
+function CServerFakePlayer:GetEnemyAndFriend_Bot(bPlayerOnly)
+	local x, y, z = self.m_engineObject:GetPixelPosv3()
+	local friendList, enemyList = {}, {}
+	local ids = self.m_Scene.m_CoreScene:QueryObjectsWithPixelInRoundvt(x, y, z, -1, -1, 25)
+	for _, id in ipairs(ids) do
+		local obj = GetCharacterByEngineObjectGlobalId(id)
+		if obj and IsClassObject(obj, CServerFightableCharacter) and obj:IsAlive() and self.m_engineObject:CanSee(obj.m_engineObject) and (not bPlayerOnly or obj:IsPlayerOrFake()) then
+			if self:IsEnemy(obj) then
+				table.insert(enemyList, obj)
+			elseif self:IsFriend(obj) then
+				table.insert(friendList, obj)
+			end
+		end
+	end
+	local enemy = SelectMin(enemyList, function(obj) return self:PixelDistanceToObject(obj) end)
+	local friend = SelectMin(friendList, function(obj) return obj:GetHp() / obj:GetMaxHp() end)
+	return {enemy, friend}
+end
+]===])

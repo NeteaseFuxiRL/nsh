@@ -1,0 +1,13 @@
+--测试场景
+RUN_SCRIPT_ON_ALLGAS([===[
+local p = g_ServerPlayerMgr:GetPlayerById(playerid)
+g_TeleportMgr:TeleportPlayer(p, 16000021, 32220, 31550, -541)
+]===])
+
+--流派竞武
+RUN_SCRIPT_ON_ALLGAS([===[
+local p = g_ServerPlayerMgr:GetPlayerById(playerid)
+if p then
+  g_TeleportMgr:TeleportPlayer(p, 16000102, 36535,32943,1851)
+end
+]===])

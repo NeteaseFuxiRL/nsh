@@ -1,0 +1,7 @@
+-- 鼠标选中目标
+RUN_SCRIPT_ON_ALLGAS([===[
+local p = g_ServerPlayerMgr:GetPlayerById(playerid) if p then
+p = p:GetTarget()
+p:SetParam(EFightProp.OtherAdjHpRecover, -10000, p:GetSyncAndSelfIS())
+end
+]===])

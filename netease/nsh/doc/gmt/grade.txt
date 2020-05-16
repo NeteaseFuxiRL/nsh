@@ -1,0 +1,6 @@
+--升级到89
+RUN_SCRIPT_ON_ALLGAS([===[
+local p = g_ServerPlayerMgr:GetPlayerById(playerid) if p then
+g_ActionMgr:DoAction(p, p, {}, "GM_SetPlayerGradeForFight", {Grade=89})
+end
+]===])

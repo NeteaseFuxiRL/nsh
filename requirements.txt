@@ -1,0 +1,16 @@
+numpy
+torch
+torchvision
+pandas
+psutil
+inflection
+posix_ipc
+filelock
+tenacity
+tqdm
+six
+pyyaml
+matplotlib
+humanfriendly
+recordtype
+pyzmq>=17.1.2

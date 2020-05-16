@@ -1,0 +1,15 @@
+--玩家当前状态刷新到玩家库
+RUN_SCRIPT_ON_ALLGAS([===[
+local p = g_ServerPlayerMgr:GetPlayerById(playerid)
+g_GasLPTZMgr:UpdatePlayerDataToMaster(p, true)
+]===])
+
+--开启玩法
+RUN_SCRIPT_ON_MASTER_IN_TICK([===[
+g_MasterLPTZMgr:OpenPlay()
+g_MasterLPTZMgr:RecordTopPlayerSkills()
+MasterActionImp.NotifyGameplayStart(nil, nil, nil, nil, {EventId=5044,Duration=86400, StartTime="00:00"})
+]===])
+
+--强行设置当前玩家名次
+g_MasterLPTZMgr:Debug_SetPlayerRank(playerid, 2)

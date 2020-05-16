@@ -1,0 +1,1 @@
+SendServiceRpc(interface, 'RunScript', 'g_ALDMgr:Stop()')

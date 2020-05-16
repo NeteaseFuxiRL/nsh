@@ -1,0 +1,7 @@
+--刷江城子
+RUN_SCRIPT_ON_ALLGAS([===[
+local p = g_ServerPlayerMgr:GetPlayerById(playerid)
+local x,y,z = p.m_engineObject:GetPixelPosv3()
+local obj = CServerNpc:new()
+obj:InitNpc(20903108,p.m_Scene,x,y,z,0,EnumCharacterType.Npc,{policySetId=28900002})
+]===])

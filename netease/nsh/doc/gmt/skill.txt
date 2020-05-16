@@ -1,0 +1,7 @@
+--学会所有技能
+RUN_SCRIPT_ON_ALLGAS([====[ RUN_SCRIPT_ON_ALLGAC([===[
+if g_MainPlayer:GetDBId() == playerid then
+Gac2Gas:GM_LearnAllClassSkills(g_Conn)
+end
+]===]) ]====])
+
